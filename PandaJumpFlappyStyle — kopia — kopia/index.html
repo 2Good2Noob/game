@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Jump</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Menu startowe -->
+        <div id="start-screen" class="screen">
+            <h1 class="game-title">Panda Jump</h1>
+            <p class="instructions">Naciśnij pokazany klawisz, aby skoczyć!</p>
+            <div class="best-score">Najlepszy wynik: <span id="best-score">0</span></div>
+            <button id="start-button" class="button">START</button>
+        </div>
+
+        <!-- Ekran gry -->
+        <div id="game-screen" class="screen hidden">
+            <div class="game-info">
+                <div class="score">Wynik: <span id="score">0</span></div>
+                <div class="jump-key">Skocz: <span id="current-key">A</span></div>
+            </div>
+            <canvas id="game-canvas" width="800" height="400"></canvas>
+        </div>
+
+        <!-- Ekran końcowy -->
+        <div id="end-screen" class="screen hidden">
+            <h2>Koniec gry!</h2>
+            <div class="final-score">Twój wynik: <span id="final-score">0</span></div>
+            <div class="best-score">Najlepszy wynik: <span id="end-best-score">0</span></div>
+            <button id="restart-button" class="button">ZAGRAJ PONOWNIE</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
