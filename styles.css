@@ -1,0 +1,141 @@
+/* Resetowanie stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    overflow: visible; /* Zmienione z 'hidden' na 'visible' aby ramka klawisza mogła wystawać */
+    background-color: #000;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: opacity 0.5s;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.hidden {
+    display: none;
+}
+
+.game-title {
+    font-size: 48px;
+    text-shadow: 4px 4px 0px #ff6b6b;
+    margin-bottom: 30px;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+.instructions {
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.8;
+    color: #ffeb3b;
+}
+
+.best-score, .score, .final-score {
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+.jump-key {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    animation: blink 1s infinite alternate;
+    z-index: 100; /* Zapewnienie, że klawisz będzie zawsze widoczny */
+    max-width: 120px; /* Ograniczenie szerokości, aby nie wystawał poza ekran */
+    overflow: visible; /* Pozwala na wyświetlanie całej zawartości */
+}
+
+@keyframes blink {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+#current-key {
+    color: #ffeb3b;
+    font-weight: bold;
+}
+
+.button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #c53030;
+    transform: translateY(0);
+    transition: transform 0.1s;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #ff8a8a;
+}
+
+.button:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #c53030;
+}
+
+.game-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#game-canvas {
+    background-color: #87CEEB;
+    display: block;
+}
+
+h2 {
+    font-size: 36px;
+    color: #ff6b6b;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0px #000;
+}
