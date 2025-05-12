@@ -122,7 +122,7 @@ function createBamboo() {
     function getRandomKey() {
         const keys = [
             { code: " ", display: "SPACJA" },
-            { code: "ArrowUp", display: "↑" },
+            { code: "x", display: "x" },
             { code: "w", display: "W" },
             { code: "z", display: "Z" }
         ];
